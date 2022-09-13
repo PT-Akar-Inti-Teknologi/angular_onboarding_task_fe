@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  ait-angular-skeleton:
+    hostname: localhost
+    container_name: ait-angular-skeleton
+    build: .
+    ports:
+      - 8080:80
