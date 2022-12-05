@@ -38,6 +38,6 @@ export class LoginService {
 
   set userInformation(params: UserInformation){
     const stringifyUser = JSON.stringify(params);
-    localStorage.setItem("userInformation", stringifyUser);
+    sessionStorage.setItem("userInformation", stringifyUser);
   }
 }
