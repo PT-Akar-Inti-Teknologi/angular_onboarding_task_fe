@@ -5,27 +5,37 @@
 
       <p>
         <mat-form-field>
-          <mat-label>Username</mat-label>
-          <input type="text" matInput formControlName="username">
+          <mat-label>Email</mat-label>
+          <input type="text" matInput formControlName="email">
         </mat-form-field> 
-        <mat-error *ngIf="hasErrors('username')">
-          <i>* {{ getMessageError(loginForm.controls["username"]) }}</i>
+
+        <mat-error *ngIf="hasErrors('email')">
+          <i><small>* {{ getMessageError(loginForm.controls["email"]) }}</small></i>
         </mat-error>
       </p> 
 
       <p>
         <mat-form-field>
-          <mat-label>Passowrd</mat-label>
+          <mat-label>Passoword</mat-label>
           <input type="password" matInput formControlName="password">
         </mat-form-field>
+        
         <mat-error *ngIf="hasErrors('password')">
-          <i>* {{ getMessageError(loginForm.controls["password"]) }}</i>
+          <i><small>* {{ getMessageError(loginForm.controls["password"]) }}</small></i>
         </mat-error>
       </p>
+
+      <mat-error *ngIf="errUserNotFound">
+        <i><small>* user not found</small></i>
+      </mat-error>
     
 
       <div class="button">
-        <button type="submit" mat-raised-button color="primary">Login</button>
+        <button type="submit" mat-raised-button color="primary">
+          <mat-icon *ngIf="loadingSpinner">
+            <mat-spinner color="accent" diameter="18"></mat-spinner>
+          </mat-icon>
+          Login</button>
       </div>
 
     </form>
