@@ -9,6 +9,7 @@ export interface UserModel {
 }
 
 export interface UserInformation {
+    email: string;
     name: string;
     avatar: string;
     token: string;
