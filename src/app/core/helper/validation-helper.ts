@@ -24,6 +24,9 @@ export class ValidationsHelpers {
                 case 'minlength':
                     error = 'Mininum ' + formControl.errors['minlength'].requiredLength + ' character';
                     break;
+                case 'email':
+                    error = 'Email not valid';
+                    break;
                 default:
                     error = formControl.errors[firstKey];
                     break;
