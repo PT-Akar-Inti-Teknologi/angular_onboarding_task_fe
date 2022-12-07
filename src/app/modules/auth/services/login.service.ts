@@ -19,11 +19,10 @@ export class LoginService {
       map(res => {
         
         const findUser = res.find(el => { 
-          
-          if(params.token !== undefined || params.token !== null){
+          if(params.token !== undefined){
             return el.email === params.email && el.token === params.token 
           }
-
+          
           return el.email === params.email && el.password === params.password
         });
 

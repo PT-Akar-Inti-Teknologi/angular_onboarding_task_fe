@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs';
 import { ValidationsHelpers } from 'src/app/core/helper/validation-helper';
 import { LoginService } from '../../services/login.service';
 import { finalize } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -25,7 +26,8 @@ export class LoginPageComponent implements OnInit, OnDestroy {
 
   constructor(
     private fb: FormBuilder,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private router: Router
   ) { 
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -54,6 +56,9 @@ export class LoginPageComponent implements OnInit, OnDestroy {
       
       this.loginSubscription = this.loginService.onSignIn(params).subscribe(res => {
         this.errUserNotFound = res === undefined ? true : false;
+        if(!this.errUserNotFound){
+          this.router.navigate(['dashboard']);
+        }
       }, err => {
         alert(err.error);
       }, () => {
