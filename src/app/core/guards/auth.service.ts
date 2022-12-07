@@ -15,7 +15,7 @@ export class AuthService {
   }
 
   isAuthenticated(): Observable<boolean> {
-    if(this.userInformation !== null || this.userInformation !== undefined){
+    if(this.userInformation !== null){
       return of(true);
     }
 
