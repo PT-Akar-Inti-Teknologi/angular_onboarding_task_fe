@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { AuthService } from './auth.service';
 import { switchMap } from 'rxjs/operators';
@@ -10,7 +10,8 @@ import { switchMap } from 'rxjs/operators';
 export class AuthGuard implements CanActivate {
   
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ){
 
   }
@@ -25,6 +26,7 @@ export class AuthGuard implements CanActivate {
     return this.authService.isAuthenticated().pipe(
       switchMap(auth => {
         if(!auth) {
+          this.router.navigate(['sign-in']);
           return of(false)
         }
 
