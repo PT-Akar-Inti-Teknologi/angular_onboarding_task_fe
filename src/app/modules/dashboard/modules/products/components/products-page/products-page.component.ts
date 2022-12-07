@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { ProductsModel } from '../../interface/products-model';
+import { ProductsService } from '../../service/products.service';
 
 @Component({
   selector: 'app-products-page',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsPageComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(
+  ) { }
 
   ngOnInit(): void {
+
   }
 
 }
