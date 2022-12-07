@@ -11,6 +11,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 import { ToolBarComponent } from './layout/components/tool-bar/tool-bar.component';
 import { LayoutComponent } from './layout/layout.component';
@@ -27,7 +29,9 @@ const materialUiModules = [
   MatProgressSpinnerModule,
   MatToolbarModule,
   MatSidenavModule,
-  MatListModule
+  MatListModule,
+  MatPaginatorModule,
+  MatSortModule
 ];
 
 @NgModule({
