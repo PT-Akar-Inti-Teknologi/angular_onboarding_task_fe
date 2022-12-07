@@ -8,6 +8,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
+import { ToolBarComponent } from './layout/components/tool-bar/tool-bar.component';
+import { LayoutComponent } from './layout/layout.component';
+import { SidenavComponent } from './layout/components/sidenav/sidenav.component';
+import { RouterModule } from '@angular/router';
 
 const materialUiModules = [
   MatCardModule, 
@@ -16,17 +26,28 @@ const materialUiModules = [
   MatFormFieldModule, 
   MatInputModule, 
   MatTableModule, 
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatToolbarModule,
+  MatSidenavModule,
+  MatListModule,
+  MatPaginatorModule,
+  MatSortModule
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ToolBarComponent,
+    LayoutComponent,
+    SidenavComponent
+  ],
   imports: [
     CommonModule,
+    RouterModule,
     materialUiModules
   ],
   exports: [
-    materialUiModules
+    materialUiModules,
+    LayoutComponent
   ]
 })
 export class CoreModule { }

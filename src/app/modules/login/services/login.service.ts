@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map, find } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { UserInformation, UserModel } from 'src/app/shared/interfaces/user-model';
 
 @Injectable({

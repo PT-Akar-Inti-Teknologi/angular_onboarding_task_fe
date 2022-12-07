@@ -1,0 +1,5 @@
+<mat-nav-list>
+    <ng-container *ngFor="let menu of listMenu">
+        <a mat-list-item [routerLink]="['/dashboard/'+menu.link]"> {{ menu.label }} </a>
+    </ng-container>    
+</mat-nav-list>
